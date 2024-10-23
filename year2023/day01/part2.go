@@ -9,34 +9,27 @@ import (
 )
 
 func part2(filename string) int {
-	file, err := os.Open(filename)
+	f, err := os.Open(filename)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	defer file.Close()
+	defer f.Close()
 
 	var (
-		scanner = bufio.NewScanner(file)
+		scanner = bufio.NewScanner(f)
 		digits  = map[string]string{
-			"one":   "o1e",
-			"two":   "t2o",
-			"three": "t3e",
-			"four":  "f4r",
-			"five":  "f5e",
-			"six":   "s6x",
-			"seven": "s7n",
-			"eight": "e8t",
-			"nine":  "n9e",
+			"one": "o1e", "two": "t2o", "three": "t3e",
+			"four": "f4r", "five": "f5e", "six": "s6x",
+			"seven": "s7n", "eight": "e8t", "nine": "n9e",
 		}
-
-		line      string
-		l, r, sum int
+		line, k, v string
+		l, r, sum  int
 	)
 
 	for scanner.Scan() {
 		line = scanner.Text()
 
-		for k, v := range digits {
+		for k, v = range digits {
 			line = strings.ReplaceAll(line, k, v)
 		}
 

@@ -9,18 +9,18 @@ import (
 )
 
 func part1(filename string) int {
-	file, err := os.Open(filename)
+	f, err := os.Open(filename)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	defer file.Close()
+	defer f.Close()
 
 	var (
-		scanner = bufio.NewScanner(file)
+		scanner = bufio.NewScanner(f)
 
 		tokens, draws  []string
 		color          string
-		n, gameId, sum int
+		gameId, n, sum int
 	)
 
 	for scanner.Scan() {
@@ -34,6 +34,7 @@ func part1(filename string) int {
 
 			if (color == "red" && n > 12) || (color == "green" && n > 13) || n > 14 {
 				gameId = 0
+				break
 			}
 		}
 		sum += gameId
