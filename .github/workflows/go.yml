@@ -2,18 +2,23 @@ name: Go
 
 on: push
 
+defaults:
+  run:
+    working-directory: ./year2023
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v5
         with:
           go-version: '1.21.x'
 
       - name: Build
-        run: go build -v year2023/...
+        run: go build -v ./...
 
       - name: Test
-        run: go test -v year2023/...
+        run: go test -v ./...
