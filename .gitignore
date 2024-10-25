@@ -1,1 +1,11 @@
-Session.vim
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Distribution / packaging
+build/
+
+# Environments
+venv/
+
+# PyCharm
+.idea/
