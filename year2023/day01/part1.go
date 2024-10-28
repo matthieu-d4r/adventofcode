@@ -9,14 +9,14 @@ import (
 )
 
 func part1(filename string) int {
-	file, err := os.Open(filename)
+	f, err := os.Open(filename)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	defer file.Close()
+	defer f.Close()
 
 	var (
-		scanner = bufio.NewScanner(file)
+		scanner = bufio.NewScanner(f)
 
 		line      string
 		l, r, sum int
