@@ -1,8 +1,6 @@
 def part_1(instructions: str) -> int:
     instructions = instructions.strip()  # remove EOL
-    num_ups = instructions.count("(")
-    # num_ups + num_downs == len => nums_downs == len - nums_ups
-    return 2 * num_ups - len(instructions)
+    return 2 * instructions.count("(") - len(instructions)
 
 
 def part_2(instructions: str) -> int:
