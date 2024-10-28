@@ -11,12 +11,15 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.13'
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install .
+          pip install './year2015'
+
       - name: Lint and format
         uses: astral-sh/ruff-action@v1
+
       - name: Test with pytest
         run: |
           pip install pytest
