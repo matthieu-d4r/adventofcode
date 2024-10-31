@@ -5,7 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "year2015"
 dynamic = ["version"]
-dependencies = []
+dependencies = [
+    "numpy"
+]
 requires-python = ">=3.12"
 description = "TODO"
 readme = "README.md"
