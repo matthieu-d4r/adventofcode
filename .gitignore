@@ -9,3 +9,6 @@ venv/
 
 # PyCharm
 .idea/
+
+# Puzzle inputs
+puzzle_input.txt
